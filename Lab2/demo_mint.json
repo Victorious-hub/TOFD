@@ -1,0 +1,7 @@
+{
+    "mint_address": "5xx73UTHZtuZJQb5NJZY6iksoPWjSZ8gXXrekwGC6Sag",
+    "decimals": 2,
+    "mint_authority": "BrptsAnVpSgAUDr9RhJZ1qRVJ1uin4fZwCddAku8LCuU",
+    "freeze_authority": "BrptsAnVpSgAUDr9RhJZ1qRVJ1uin4fZwCddAku8LCuU",
+    "network": "http://127.0.0.1:8899"
+}

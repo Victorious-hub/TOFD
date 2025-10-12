@@ -1,0 +1,27 @@
+{
+  "name": "lab2-metaplex",
+  "version": "1.0.0",
+  "description": "Utility to create Metaplex metadata on localnet",
+  "main": "create_metadata.js",
+  "scripts": {
+    "create-metadata": "node create_metadata.js metadata_config.json"
+  },
+  "dependencies": {
+    "@metaplex-foundation/js": "^0.19.5",
+    "@metaplex-foundation/mpl-token-metadata": "^3.4.0",
+    "@metaplex-foundation/umi": "^1.4.1",
+    "@metaplex-foundation/umi-bundle-defaults": "^1.4.1",
+    "@solana/spl-token": "^0.1.8",
+    "@solana/web3.js": "^1.98.4",
+    "bs58": "^6.0.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@types/node": "^24.7.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}

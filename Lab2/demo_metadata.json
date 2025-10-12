@@ -1,0 +1,18 @@
+{
+    "name": "DemoToken",
+    "symbol": "DTK",
+    "description": "Token DemoToken (DTK)",
+    "seller_fee_basis_points": 0,
+    "image": "https://example.com/image.png",
+    "external_url": "",
+    "attributes": [],
+    "properties": {
+        "files": [
+            {
+                "uri": "https://example.com/image.png",
+                "type": "image/png"
+            }
+        ]
+    },
+    "mint": "3BXHrq3PJpU3zNmEH6u8friMkuKWfag1pukHsPE2QsQg"
+}

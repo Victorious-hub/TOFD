@@ -1,0 +1,7 @@
+{
+    "mint_address": "3BXHrq3PJpU3zNmEH6u8friMkuKWfag1pukHsPE2QsQg",
+    "decimals": 2,
+    "mint_authority": "4HL2C5M2p2Xq9wPdWFBgpcLiBCQSCb4xiTCn82MmP5ZW",
+    "freeze_authority": "4HL2C5M2p2Xq9wPdWFBgpcLiBCQSCb4xiTCn82MmP5ZW",
+    "network": "https://api.devnet.solana.com"
+}
