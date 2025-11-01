@@ -1,3 +1,24 @@
+cd /home/shyskov/Solana && anchor --version
+
+
+
+
+cd /home/shyskov/Solana/Lab3 && anchor init counter
+
+
+
+cd /home/shyskov/Solana/Lab3/counter && anchor build
+
+
+cd /home/shyskov/Solana/Lab3 && solana-test-validator --reset --ledger /home/shyskov/Solana/Lab3/test-ledger
+
+
+cd /home/shyskov/Solana/Lab3 && solana airdrop 10
+
+
+cd /home/shyskov/Solana/Lab3 && python counter.py
+
+
 cd /home/shyskov/Solana/Lab3 && anchor init dex
 
 
