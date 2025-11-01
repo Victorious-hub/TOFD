@@ -1,7 +1,7 @@
 {
-    "mint_address": "5xx73UTHZtuZJQb5NJZY6iksoPWjSZ8gXXrekwGC6Sag",
+    "mint_address": "BJimUQNpQTZ1QJN8cUbXHe551YJdbUZkzUVke672NxJK",
     "decimals": 2,
-    "mint_authority": "BrptsAnVpSgAUDr9RhJZ1qRVJ1uin4fZwCddAku8LCuU",
-    "freeze_authority": "BrptsAnVpSgAUDr9RhJZ1qRVJ1uin4fZwCddAku8LCuU",
+    "mint_authority": "7Vj1ZpXzCNeCvvCmdjLKX1Qn6PiaHQC3KtAsdwXACtgd",
+    "freeze_authority": "7Vj1ZpXzCNeCvvCmdjLKX1Qn6PiaHQC3KtAsdwXACtgd",
     "network": "http://127.0.0.1:8899"
 }

@@ -1,7 +1,7 @@
 {
-    "mint_address": "3BXHrq3PJpU3zNmEH6u8friMkuKWfag1pukHsPE2QsQg",
-    "decimals": 2,
-    "mint_authority": "4HL2C5M2p2Xq9wPdWFBgpcLiBCQSCb4xiTCn82MmP5ZW",
-    "freeze_authority": "4HL2C5M2p2Xq9wPdWFBgpcLiBCQSCb4xiTCn82MmP5ZW",
-    "network": "https://api.devnet.solana.com"
+    "mint_address": "GaH7NMv1Rsi3ECzY3DrHb6QGYb2CkTwwk8s4j9Wqzj7J",
+    "decimals": 10,
+    "mint_authority": "EJhdhTGeUDcsusVPfBawcyeao5R9P9mpmRhvaXxez7UQ",
+    "freeze_authority": "EJhdhTGeUDcsusVPfBawcyeao5R9P9mpmRhvaXxez7UQ",
+    "network": "http://127.0.0.1:8899"
 }

@@ -22,29 +22,29 @@ class SolanaWorker:
         keypair_bytes = list(self.keypair.to_bytes())
         with open(filename, "w") as f:
             json.dump(keypair_bytes, f)
-        print(f"💾 Wallet saved to {filename}")
-        print(f"🔑 Public Key: {self.public_key}")
+        print(f"Wallet saved to {filename}")
+        print(f"Public Key: {self.public_key}")
         return True
 
     async def airdrop_sol(self, amount_sol: float = 1.0):
         lamports = int(amount_sol * LAMPORTS_PER_SOL)
-        print(f"⚙️ Requesting airdrop of {amount_sol} SOL to {self.public_key}...")
+        print(f"Requesting airdrop of {amount_sol} SOL to {self.public_key}...")
         resp = await self.client.request_airdrop(self.public_key, lamports)
         signature = resp.value
-        print(f"⏳ Awaiting confirmation: {signature}")
+        print(f"Awaiting confirmation: {signature}")
         await self.client.confirm_transaction(signature)
-        print("✅ Airdrop confirmed!")
+        print("Airdrop confirmed!")
 
     async def get_balance(self, pubkey: Pubkey | None = None):
         pubkey = pubkey or self.public_key
         resp = await self.client.get_balance(pubkey)
         lamports = resp.value
         sol = lamports / LAMPORTS_PER_SOL
-        print(f"💰 Balance for {pubkey}: {sol} SOL")
+        print(f"Balance for {pubkey}: {sol} SOL")
         return sol
 
     async def create_token(self, decimals=2, filename="mint.json"):
-        print("🚀 Creating new SPL token mint...")
+        print("Creating new SPL token mint...")
         mint_authority = self.keypair
         freeze_authority = self.keypair
 
@@ -76,15 +76,15 @@ class SolanaWorker:
 
         Path(filename).write_text(json.dumps(mint_info, indent=4), encoding="utf-8")
 
-        print(f"✅ Mint created: {mint_pubkey}")
-        print(f"💾 Saved mint info to {filename}")
+        print(f"Mint created: {mint_pubkey}")
+        print(f"Saved mint info to {filename}")
         return token
 
     async def mint_to_wallet(self, token: AsyncToken, amount: float):
-        print(f"🪙 Minting {amount} tokens to wallet {self.public_key}...")
+        print(f"Minting {amount} tokens to wallet {self.public_key}...")
 
         ata = await token.create_associated_token_account(self.public_key)
-        print(f"📦 Created ATA: {ata}")
+        print(f"Created ATA: {ata}")
 
         mint_info = await token.get_mint_info()
         decimals = mint_info.decimals
@@ -93,7 +93,7 @@ class SolanaWorker:
             mint_authority=self.keypair,
             amount=int(amount * (10 ** decimals)),
         )
-        print(f"✅ Mint complete, transaction: {tx_sig}")
+        print(f"Mint complete, transaction: {tx_sig}")
 
         try:
             balance = await token.get_balance(ata)
@@ -105,7 +105,7 @@ class SolanaWorker:
         return ata
 
     async def mint_to_many(self, mint_addr: str, recipients: list[str], amount_each: float):
-        print(f"🔁 Minting {amount_each} tokens to {len(recipients)} recipients...")
+        print(f"Minting {amount_each} tokens to {len(recipients)} recipients...")
         token = AsyncToken(self.client, Pubkey.from_string(mint_addr), TOKEN_PROGRAM_ID, self.keypair)
 
         mint_info = await token.get_mint_info()
@@ -116,9 +116,9 @@ class SolanaWorker:
         for r in recipients:
             recipient_pub = Pubkey.from_string(r)
             ata = await token.create_associated_token_account(recipient_pub)
-            print(f"📦 ATA for {r}: {ata}")
+            print(f"ATA for {r}: {ata}")
             sig = await token.mint_to(dest=ata, mint_authority=self.keypair, amount=base_amount)
-            print(f"✅ Minted to {r}, tx: {sig}")
+            print(f"Minted to {r}, tx: {sig}")
             results.append((r, ata, sig))
 
         return results
@@ -165,7 +165,7 @@ class SolanaWorker:
             with open(fname, "w") as f:
                 json.dump(list(kp.to_bytes()), f)
             recipients.append(str(kp.pubkey()))
-            print(f"👤 Recipient {i} public key: {recipients[-1]} (saved to {fname})")
+            print(f"Recipient {i} public key: {recipients[-1]} (saved to {fname})")
 
         results = await self.mint_to_many(mint_addr, recipients, amount_each=10.0)
 

@@ -80,7 +80,7 @@ function findPrice(
       continue;
     }
     if (price.status !== PriceStatus.Trading) {
-      console.warn(`⚠️  ${symbol} status is ${PriceStatus[price.status]} – using latest available price.`);
+      console.warn(`${symbol} status is ${PriceStatus[price.status]} – using latest available price.`);
     }
 
     const rawConfidence = price.confidence ?? price.aggregate.confidence;
